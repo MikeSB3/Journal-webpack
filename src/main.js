@@ -12,11 +12,12 @@ $(document).ready(function() {
     var newJournalEntry = new JournalEntry(titleInput, bodyInput);
     journal.addEntry(newJournalEntry);
     event.preventDefault();
-    console.log(journal);
-    var wordLength = bodyInput.split(" ").length;
-    console.log(wordLength);
-    console.log(journal);
-    $('#journalEntry').append("<h4 id='journalTitle'>" + titleInput + "</h4><br><p id='journalBody'>" + bodyInput + "</p>");
+    var bodyArray = bodyInput.split(" ");
+    var bodyLength = bodyArray.length;
+    var wordArray = bodyInput.split("");
+     console.log(journal);
+    newJournalEntry.vowelConsonantCounter(wordArray);
+    $('#journalEntry').append("<h4 id='journalTitle'>" + titleInput + "</h4><br><p id='journalBody'>" + bodyInput + "</p><p id='wordNumber'>" + bodyLength + "</p>");
   });
 });
 
