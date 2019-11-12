@@ -15,8 +15,9 @@ $(document).ready(function() {
     var bodyArray = bodyInput.split(" ");
     var bodyLength = bodyArray.length;
     var wordArray = bodyInput.split("");
-     console.log(journal);
-    newJournalEntry.vowelConsonantCounter(wordArray);
+    console.log(journal);
+    newJournalEntry.vowelCounter(wordArray);
+    newJournalEntry.consonantCounter(wordArray);
     $('#journalEntry').append("<h4 id='journalTitle'>" + titleInput + "</h4><br><p id='journalBody'>" + bodyInput + "</p><p id='wordNumber'>" + bodyLength + "</p>");
   });
 });

@@ -18,21 +18,46 @@ Journal.prototype.assignId = function() {
   return this.currentId;
 };
 
-JournalEntry.prototype.vowelConsonantCounter = function (arr) {
-  var vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'];
-  var consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'y', 'z'];
-  for(var i = 0; i <= arr.length; i++){
-    console.log(arr);
-    var counter = 0;
-    if(arr[i].includes(vowels)){
-    counter ++;
-  } else if (arr[i].includes(consonants)){
-    counter ++;
-  } else {
-    console.log('no vowels or consonants?');
-  }
-  console.log(counter);
-  return counter;
-}
-
+JournalEntry.prototype.vowelCounter = function (arr) {
+    var vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'];
+    var vowelCounter = 0;
+    arr.forEach(function(i){
+      console.log(arr);
+      console.log(arr[1]);
+      console.log(arr[2]);
+      console.log(i);
+      if(vowels.includes(i)){
+        vowelCounter ++;
+      }
+      console.log(vowelCounter);
+      return vowelCounter;
+    })
 };
+
+JournalEntry.prototype.consonantCounter = function (arr) {
+  var consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'y', 'z'];
+  var consonantCounter = 0;
+  arr.forEach(function(i) {
+      if(consonants.includes(i)){
+        consonantCounter ++;
+      }
+      console.log(consonantCounter);
+      return consonantCounter;
+  });
+};
+
+
+//
+// for(var i = 0; i <= arr.length; i++){
+//   console.log(arr);
+//   var counter = 0;
+//   if(arr[i].includes(vowels)){
+//   counter ++;
+// } else if (arr[i].includes(consonants)){
+//   counter ++;
+// } else {
+//   console.log('no vowels or consonants?');
+// }
+// console.log(counter);
+// return counter;
+// }
