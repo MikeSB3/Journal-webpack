@@ -1,20 +1,23 @@
 //user logic
+import { Journal } from './journal';
 import { JournalEntry } from './journal';
 import './styles.css';
 
+var journal = new Journal;
 
 $(document).ready(function() {
   $(".entryForm").submit(function(event) {
     var titleInput = $('#title').val();
     var bodyInput = $('#body').val();
-    var journalEntry = new JournalEntry(titleInput, bodyInput);
+    var newJournalEntry = new JournalEntry(titleInput, bodyInput);
+    journal.addEntry(newJournalEntry);
     event.preventDefault();
-    console.log(titleInput, bodyInput);
-    console.log(journalEntry);
-    // console.log(journalEntry);
-    // console.log(journalEntry.title);
-    // console.log(Object.keys(journalEntry));
-    $('#journalEntry').html("<h4 id='journalTitle'>" + titleInput + "</h4><br><p id='journalBody'>" + bodyInput + "</p>");
-    // $('#journalBody').
+    console.log(journal);
+    var wordLength = bodyInput.split(" ").length;
+    console.log(wordLength);
+    console.log(journal);
+    $('#journalEntry').append("<h4 id='journalTitle'>" + titleInput + "</h4><br><p id='journalBody'>" + bodyInput + "</p>");
   });
 });
+
+//Need to create methods to check word and letter functionality
