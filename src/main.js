@@ -16,10 +16,8 @@ $(document).ready(function() {
     var bodyLength = bodyArray.length;
     var wordArray = bodyInput.split("");
     console.log(journal);
-    newJournalEntry.vowelCounter(wordArray);
-    newJournalEntry.consonantCounter(wordArray);
-    $('#journalEntry').append("<h4 id='journalTitle'>" + titleInput + "</h4><br><p id='journalBody'>" + bodyInput + "</p><p id='wordNumber'>" + bodyLength + "</p>");
+    var consonantCounter = newJournalEntry.consonantCounter(wordArray);
+    var vowelCounter = newJournalEntry.vowelCounter(wordArray);
+    $('#journalEntry').append("<h4 id='journalTitle'> Your Title: " + titleInput + "</h4><br><p id='journalBody'> Journal Entry: " + bodyInput + "</p><p id='wordNumber'>" + "Number of words: " + bodyLength + "</p>" + "Consonants: " + consonantCounter + "<br> Vowels: " + vowelCounter);
   });
 });
-
-//Need to create methods to check word and letter functionality

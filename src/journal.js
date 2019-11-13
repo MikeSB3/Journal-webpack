@@ -22,16 +22,12 @@ JournalEntry.prototype.vowelCounter = function (arr) {
     var vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'];
     var vowelCounter = 0;
     arr.forEach(function(i){
-      console.log(arr);
-      console.log(arr[1]);
-      console.log(arr[2]);
-      console.log(i);
       if(vowels.includes(i)){
         vowelCounter ++;
       }
-      console.log(vowelCounter);
-      return vowelCounter;
+      console.log("Vowels: ", vowelCounter);
     })
+    return vowelCounter;
 };
 
 JournalEntry.prototype.consonantCounter = function (arr) {
@@ -41,9 +37,9 @@ JournalEntry.prototype.consonantCounter = function (arr) {
       if(consonants.includes(i)){
         consonantCounter ++;
       }
-      console.log(consonantCounter);
-      return consonantCounter;
-  });
+      console.log("Consonants: ", consonantCounter);
+  })
+  return consonantCounter;
 };
 
 
